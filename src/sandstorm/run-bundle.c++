@@ -2006,8 +2006,7 @@ private:
           context.warning("** Updater died; restarting it");
           updaterPid = startUpdater(config, fdBundle, true);
         } else if (sandstormDied) {
-          context.exitError("** Server monitor died. Aborting.");
-          KJ_UNREACHABLE;
+          context.warning("** Sandstorm died. Keeping the update monitor alive just in case.");
         }
       } else {
         // Kill updater if it is running.
